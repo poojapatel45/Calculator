@@ -10,6 +10,7 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String output = "0";
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
@@ -33,6 +34,7 @@ public class Calculator {
 	
 	public void add (int value) {
 		total += value;
+		output += " + " + value;
 	}
 	
 	/**
@@ -43,6 +45,7 @@ public class Calculator {
 	
 	public void subtract (int value) {
 		total -= value;
+		output += " - " + value;
 	}
 	
 	/**
@@ -53,6 +56,7 @@ public class Calculator {
 	
 	public void multiply (int value) {
 		total *= value;
+		output += " * " + value;
 	}
 	
 	/**
@@ -62,6 +66,7 @@ public class Calculator {
 	 */
 	
 	public void divide (int value) {
+		output += " / " + value;
 		if (value == 0) 
 			total = 0;
 		else 
@@ -75,6 +80,6 @@ public class Calculator {
 	 */
 	
 	public String getHistory () {
-		return "";
+		return output;
 	}
 }
